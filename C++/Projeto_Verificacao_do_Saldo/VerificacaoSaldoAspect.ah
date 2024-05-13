@@ -1,0 +1,17 @@
+// VerificacaoSaldoAspect.ah
+#include <aspectc++/aspect.h>
+#include "Conta.h"
+
+aspect VerificacaoSaldoAspect {
+    advice call("% Conta::getSaldo()") : around() {
+        // Implementação da verificação do saldo antes de chamar o método getSaldo()
+        
+        // Chamar o método getSaldo() original
+        float saldo = tjp->proceed();
+
+        // Implementação da verificação do saldo após chamar o método getSaldo()
+
+        // Retornar o saldo
+        return saldo;
+    }
+};
